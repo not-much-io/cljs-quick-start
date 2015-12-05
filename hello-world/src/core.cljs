@@ -1,7 +1,13 @@
-(ns hello-world.core)
+(ns hello-world.core
+  (:require [clojure.browser.repl :as repl]))
+
+(defonce conn
+         (repl/connect "http://localhost:9000/repl"))
 
 (enable-console-print!)
 
-(println "Hello World!")
+(println "Hello world!")
 
-
+;; ADDED
+(defn foo [a b]
+  (+ a b))
